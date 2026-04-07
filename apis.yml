@@ -7,9 +7,9 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
+  - Cloud Deployment
   - Developer Experience
   - Internal Developer Platform
-  - Cloud Deployment
   - Platform Engineering
 url: >-
   https://raw.githubusercontent.com/api-evangelist/northflank/refs/heads/main/apis.yml
@@ -25,9 +25,9 @@ apis:
       across cloud providers.
     humanURL: https://northflank.com
     tags:
+      - Cloud Deployment
       - Developer Experience
       - Internal Developer Platform
-      - Cloud Deployment
     properties:
       - type: Documentation
         url: https://northflank.com/docs
