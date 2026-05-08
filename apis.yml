@@ -31,6 +31,8 @@ apis:
       - Developer Experience
       - Internal Developer Platform
     properties:
+      - type: OpenAPI
+        url: openapi/northflank-openapi.yml
       - type: Documentation
         url: https://northflank.com/docs/v1/api/
       - type: Getting Started
