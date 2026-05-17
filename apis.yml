@@ -35,7 +35,7 @@ apis:
         url: openapi/northflank-openapi.yml
       - type: Documentation
         url: https://northflank.com/docs/v1/api/
-      - type: Getting Started
+      - type: GettingStarted
         url: https://northflank.com/docs/getting-started
       - type: Authentication
         url: https://northflank.com/docs/v1/api/getting-started/authentication
@@ -46,7 +46,7 @@ common:
     url: https://northflank.com/docs
   - type: API Documentation
     url: https://northflank.com/docs/v1/api/
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/northflank
 maintainers:
   - FN: Kin Lane
