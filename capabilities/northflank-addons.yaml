@@ -1,0 +1,180 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Northflank API — Addons
+  description: 'Northflank API — Addons. 4 operations. Lead operation: List addons in a project. Self-contained Naftiko capability
+    covering one Northflank business surface.'
+  tags:
+  - Northflank
+  - Addons
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    NORTHFLANK_API_KEY: NORTHFLANK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: northflank-addons
+    baseUri: https://api.northflank.com/v1
+    description: Northflank API — Addons business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-projectId-addons
+      path: /projects/{projectId}/addons
+      operations:
+      - name: listaddons
+        method: GET
+        description: List addons in a project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createaddon
+        method: POST
+        description: Create an addon
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects-projectId-addons-addonId
+      path: /projects/{projectId}/addons/{addonId}
+      operations:
+      - name: getaddon
+        method: GET
+        description: Get an addon
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: addonId
+          in: path
+          type: string
+          required: true
+      - name: deleteaddon
+        method: DELETE
+        description: Delete an addon
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: addonId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.NORTHFLANK_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: northflank-addons-rest
+    port: 8080
+    description: REST adapter for Northflank API — Addons. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/projects/{projectid}/addons
+      name: projects-projectid-addons
+      description: REST surface for projects-projectId-addons.
+      operations:
+      - method: GET
+        name: listaddons
+        description: List addons in a project
+        call: northflank-addons.listaddons
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createaddon
+        description: Create an addon
+        call: northflank-addons.createaddon
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}/addons/{addonid}
+      name: projects-projectid-addons-addonid
+      description: REST surface for projects-projectId-addons-addonId.
+      operations:
+      - method: GET
+        name: getaddon
+        description: Get an addon
+        call: northflank-addons.getaddon
+        with:
+          addonId: rest.addonId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteaddon
+        description: Delete an addon
+        call: northflank-addons.deleteaddon
+        with:
+          addonId: rest.addonId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: northflank-addons-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Northflank API — Addons. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-addons-project
+      description: List addons in a project
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: northflank-addons.listaddons
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-addon
+      description: Create an addon
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: northflank-addons.createaddon
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-addon
+      description: Get an addon
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: northflank-addons.getaddon
+      with:
+        addonId: tools.addonId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-addon
+      description: Delete an addon
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: northflank-addons.deleteaddon
+      with:
+        addonId: tools.addonId
+      outputParameters:
+      - type: object
+        mapping: $.
