@@ -14,7 +14,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/northflank/refs/heads/main/apis.yml
 created: '2026-03-27'
-modified: '2026-04-28'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
   - aid: northflank:northflank-api
@@ -48,6 +48,9 @@ common:
     url: https://northflank.com/docs/v1/api/
   - type: GitHubOrganization
     url: https://github.com/northflank
+  - name: Agent Skills
+    url: https://github.com/northflank/skills
+    type: AgentSkill
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
