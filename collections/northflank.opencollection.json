@@ -1,0 +1,309 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Northflank API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.northflank.com/v1/team/projects"
+          },
+          "docs": "List projects"
+        },
+        {
+          "info": {
+            "name": "Create a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.northflank.com/v1/team/projects",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a project"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Services",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List services in a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.northflank.com/v1/projects/:projectId/services",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List services in a project"
+        },
+        {
+          "info": {
+            "name": "Create a service",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.northflank.com/v1/projects/:projectId/services",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a service"
+        },
+        {
+          "info": {
+            "name": "Get a service",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.northflank.com/v1/projects/:projectId/services/:serviceId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a service"
+        },
+        {
+          "info": {
+            "name": "Delete a service",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.northflank.com/v1/projects/:projectId/services/:serviceId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a service"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List jobs in a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.northflank.com/v1/projects/:projectId/jobs",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List jobs in a project"
+        },
+        {
+          "info": {
+            "name": "Create a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.northflank.com/v1/projects/:projectId/jobs",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a job"
+        },
+        {
+          "info": {
+            "name": "Run a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.northflank.com/v1/projects/:projectId/jobs/:jobId/run",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Run a job"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Addons",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List addons in a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.northflank.com/v1/projects/:projectId/addons",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List addons in a project"
+        },
+        {
+          "info": {
+            "name": "Create an addon",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.northflank.com/v1/projects/:projectId/addons",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an addon"
+        },
+        {
+          "info": {
+            "name": "Get an addon",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.northflank.com/v1/projects/:projectId/addons/:addonId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "addonId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an addon"
+        },
+        {
+          "info": {
+            "name": "Delete an addon",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.northflank.com/v1/projects/:projectId/addons/:addonId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "addonId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an addon"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
