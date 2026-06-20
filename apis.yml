@@ -4,7 +4,7 @@ description: >-
   Northflank is an internal developer platform providing self-service deployment, scaling, and management of
   applications, databases, and jobs across cloud providers.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Cloud Deployment
   - Developer Experience
