@@ -49,7 +49,7 @@ common:
     url: https://github.com/northflank
   - name: Agent Skills
     url: https://github.com/northflank/skills
-    type: AgentSkill
+    type: AgentSkills
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
