@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://northflank.com/security
+url: https://northflank.com/security
+certifications:
+- SOC 2
+- ISO 27001
+- HIPAA
+evidence:
+- source: https://northflank.com/security
+  keywords:
+  - soc 2
+  - iso 27001
+  - hipaa
+  - trust center

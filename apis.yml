@@ -37,6 +37,16 @@ apis:
       - type: Authentication
         url: https://northflank.com/docs/v1/api/getting-started/authentication
 common:
+  - type: TrustCenter
+    url: security/northflank-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/northflank-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/northflank-domain-security.yml
+  - type: Authentication
+    url: authentication/northflank-authentication.yml
+  - url: https://northflank.com/blog/rss/
+    type: Blog
   - type: LinkedIn
     url: https://www.linkedin.com/company/northflank
   - type: Website
