@@ -37,6 +37,8 @@ apis:
       - type: Authentication
         url: https://northflank.com/docs/v1/api/getting-started/authentication
 common:
+  - type: AgenticAccess
+    url: agentic-access/northflank-agentic-access.yml
   - type: TrustCenter
     url: security/northflank-trust-center.yml
   - type: VulnerabilityDisclosure
