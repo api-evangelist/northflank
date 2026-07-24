@@ -1,0 +1,111 @@
+openapi: 3.1.0
+info:
+  title: Northflank Addons Services API
+  version: v1
+  description: Minimal OpenAPI 3.1 description of the Northflank REST API for managing projects, services, jobs, and addons on the Northflank platform.
+  x-generated-from: https://northflank.com/docs/v1/api/
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://api.northflank.com/v1
+  description: Northflank API production server
+security:
+- bearerAuth: []
+tags:
+- name: Services
+paths:
+  /projects/{projectId}/services:
+    get:
+      tags:
+      - Services
+      summary: List services in a project
+      operationId: listServices
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      responses:
+        '200':
+          description: A list of services.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericListResponse'
+    post:
+      tags:
+      - Services
+      summary: Create a service
+      operationId: createService
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: The created service.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+  /projects/{projectId}/services/{serviceId}:
+    get:
+      tags:
+      - Services
+      summary: Get a service
+      operationId: getService
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ServiceId'
+      responses:
+        '200':
+          description: A service.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+    delete:
+      tags:
+      - Services
+      summary: Delete a service
+      operationId: deleteService
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ServiceId'
+      responses:
+        '200':
+          description: Deletion acknowledged.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+components:
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+  parameters:
+    ServiceId:
+      name: serviceId
+      in: path
+      required: true
+      schema:
+        type: string
+    ProjectId:
+      name: projectId
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

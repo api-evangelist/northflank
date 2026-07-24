@@ -1,0 +1,63 @@
+openapi: 3.1.0
+info:
+  title: Northflank Addons Projects API
+  version: v1
+  description: Minimal OpenAPI 3.1 description of the Northflank REST API for managing projects, services, jobs, and addons on the Northflank platform.
+  x-generated-from: https://northflank.com/docs/v1/api/
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://api.northflank.com/v1
+  description: Northflank API production server
+security:
+- bearerAuth: []
+tags:
+- name: Projects
+paths:
+  /team/projects:
+    get:
+      tags:
+      - Projects
+      summary: List projects
+      operationId: listProjects
+      responses:
+        '200':
+          description: A list of projects.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericListResponse'
+    post:
+      tags:
+      - Projects
+      summary: Create a project
+      operationId: createProject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: The created project.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+components:
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
