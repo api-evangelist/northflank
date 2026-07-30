@@ -4,7 +4,20 @@ description: >-
   Northflank is an internal developer platform providing self-service deployment, scaling, and management of
   applications, databases, and jobs across cloud providers.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/northflank.png
 tags:
   - Cloud Deployment
   - Developer Experience
@@ -15,27 +28,70 @@ created: '2026-03-27'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: northflank:northflank-api
-    name: Northflank API
-    description: >-
-      The Northflank REST API provides programmatic access to manage projects, services, jobs, addons, workflows,
-      pipelines, volumes, secrets, cloud providers, domains, integrations, load balancers, teams, and organizations on
-      the Northflank platform.
-    humanURL: https://northflank.com
-    baseURL: https://api.northflank.com/v1
-    tags:
-      - Cloud Deployment
-      - Developer Experience
-      - Internal Developer Platform
-    properties:
-      - type: OpenAPI
-        url: openapi/northflank-openapi.yml
-      - type: Documentation
-        url: https://northflank.com/docs/v1/api/
-      - type: GettingStarted
-        url: https://northflank.com/docs/getting-started
-      - type: Authentication
-        url: https://northflank.com/docs/v1/api/getting-started/authentication
+- aid: northflank:northflank-addons-api
+  name: Northflank Addons API
+  description: The Addons API from Northflank — 2 operation(s) for addons.
+  humanURL: https://northflank.com
+  baseURL: https://api.northflank.com/v1
+  tags:
+  - Addons
+  properties:
+  - type: OpenAPI
+    url: openapi/northflank-addons-api-openapi.yml
+  - type: Documentation
+    url: https://northflank.com/docs/v1/api/
+  - type: GettingStarted
+    url: https://northflank.com/docs/getting-started
+  - type: Authentication
+    url: https://northflank.com/docs/v1/api/getting-started/authentication
+- aid: northflank:northflank-jobs-api
+  name: Northflank Jobs API
+  description: The Jobs API from Northflank — 2 operation(s) for jobs.
+  humanURL: https://northflank.com
+  baseURL: https://api.northflank.com/v1
+  tags:
+  - Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/northflank-jobs-api-openapi.yml
+  - type: Documentation
+    url: https://northflank.com/docs/v1/api/
+  - type: GettingStarted
+    url: https://northflank.com/docs/getting-started
+  - type: Authentication
+    url: https://northflank.com/docs/v1/api/getting-started/authentication
+- aid: northflank:northflank-projects-api
+  name: Northflank Projects API
+  description: The Projects API from Northflank — 1 operation(s) for projects.
+  humanURL: https://northflank.com
+  baseURL: https://api.northflank.com/v1
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/northflank-projects-api-openapi.yml
+  - type: Documentation
+    url: https://northflank.com/docs/v1/api/
+  - type: GettingStarted
+    url: https://northflank.com/docs/getting-started
+  - type: Authentication
+    url: https://northflank.com/docs/v1/api/getting-started/authentication
+- aid: northflank:northflank-services-api
+  name: Northflank Services API
+  description: The Services API from Northflank — 2 operation(s) for services.
+  humanURL: https://northflank.com
+  baseURL: https://api.northflank.com/v1
+  tags:
+  - Services
+  properties:
+  - type: OpenAPI
+    url: openapi/northflank-services-api-openapi.yml
+  - type: Documentation
+    url: https://northflank.com/docs/v1/api/
+  - type: GettingStarted
+    url: https://northflank.com/docs/getting-started
+  - type: Authentication
+    url: https://northflank.com/docs/v1/api/getting-started/authentication
 common:
   - type: AgenticAccess
     url: agentic-access/northflank-agentic-access.yml
