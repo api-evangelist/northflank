@@ -1,0 +1,110 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Northflank Addons API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Addons",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List addons in a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.northflank.com/v1/projects/:projectId/addons",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List addons in a project"
+        },
+        {
+          "info": {
+            "name": "Create an addon",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.northflank.com/v1/projects/:projectId/addons",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an addon"
+        },
+        {
+          "info": {
+            "name": "Get an addon",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.northflank.com/v1/projects/:projectId/addons/:addonId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "addonId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an addon"
+        },
+        {
+          "info": {
+            "name": "Delete an addon",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.northflank.com/v1/projects/:projectId/addons/:addonId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "addonId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an addon"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
