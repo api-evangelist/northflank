@@ -50,6 +50,8 @@ apis:
   humanURL: https://northflank.com
   baseURL: https://api.northflank.com/v1
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
@@ -66,6 +68,8 @@ apis:
   humanURL: https://northflank.com
   baseURL: https://api.northflank.com/v1
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
