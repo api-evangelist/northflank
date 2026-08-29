@@ -4,6 +4,17 @@ description: >-
   Northflank is an internal developer platform providing self-service deployment, scaling, and management of
   applications, databases, and jobs across cloud providers.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
