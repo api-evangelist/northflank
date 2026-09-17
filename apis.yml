@@ -40,22 +40,6 @@ created: '2026-03-27'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 apis:
-- aid: northflank:northflank-addons-api
-  name: Northflank Addons API
-  description: The Addons API from Northflank — 2 operation(s) for addons.
-  humanURL: https://northflank.com
-  baseURL: https://api.northflank.com/v1
-  tags:
-  - Addons
-  properties:
-  - type: OpenAPI
-    url: openapi/northflank-addons-api-openapi.yml
-  - type: Documentation
-    url: https://northflank.com/docs/v1/api/
-  - type: GettingStarted
-    url: https://northflank.com/docs/getting-started
-  - type: Authentication
-    url: https://northflank.com/docs/v1/api/getting-started/authentication
 - aid: northflank:northflank-jobs-api
   name: Northflank Jobs API
   description: The Jobs API from Northflank — 2 operation(s) for jobs.
@@ -102,6 +86,22 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/northflank-services-api-openapi.yml
+  - type: Documentation
+    url: https://northflank.com/docs/v1/api/
+  - type: GettingStarted
+    url: https://northflank.com/docs/getting-started
+  - type: Authentication
+    url: https://northflank.com/docs/v1/api/getting-started/authentication
+- aid: northflank:northflank-add-ons-api
+  name: Northflank Add Ons API
+  description: The Add Ons API from Northflank — 2 operation(s) for add ons.
+  humanURL: https://northflank.com
+  baseURL: https://api.northflank.com/v1
+  tags:
+  - Add Ons
+  properties:
+  - type: OpenAPI
+    url: openapi/northflank-add-ons-api-openapi.yml
   - type: Documentation
     url: https://northflank.com/docs/v1/api/
   - type: GettingStarted
