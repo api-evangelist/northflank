@@ -98,6 +98,8 @@ apis:
   humanURL: https://northflank.com
   baseURL: https://api.northflank.com/v1
   tags:
+  - Addons
+  tags_raw:
   - Add Ons
   properties:
   - type: OpenAPI
