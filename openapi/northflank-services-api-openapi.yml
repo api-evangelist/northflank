@@ -81,14 +81,14 @@ paths:
                 $ref: '#/components/schemas/GenericObject'
 components:
   parameters:
-    ServiceId:
-      name: serviceId
+    ProjectId:
+      name: projectId
       in: path
       required: true
       schema:
         type: string
-    ProjectId:
-      name: projectId
+    ServiceId:
+      name: serviceId
       in: path
       required: true
       schema:
