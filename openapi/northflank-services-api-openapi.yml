@@ -81,22 +81,19 @@ paths:
                 $ref: '#/components/schemas/GenericObject'
 components:
   parameters:
-    ProjectId:
-      name: projectId
-      in: path
-      required: true
-      schema:
-        type: string
     ServiceId:
       name: serviceId
       in: path
       required: true
       schema:
         type: string
+    ProjectId:
+      name: projectId
+      in: path
+      required: true
+      schema:
+        type: string
   schemas:
-    GenericObject:
-      type: object
-      additionalProperties: true
     GenericListResponse:
       type: object
       properties:
@@ -104,6 +101,9 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+    GenericObject:
+      type: object
       additionalProperties: true
   securitySchemes:
     bearerAuth:
