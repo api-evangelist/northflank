@@ -6,6 +6,7 @@ checked:
 - https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
 - https://github.com/cncf/k8s-conformance
 - https://github.com/cncf/landscape
+- https://github.com/istio/istio.io
 - https://github.com/marketplace?type=actions
 marketplace_apps: []
 edges:
@@ -101,5 +102,31 @@ edges:
     builder: Pipedream repo (component)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: Istio (ecosystem)
+  partner: istio
+  partner_match: register
+  type: register
+  direction: partner-built
+  category: Service mesh ecosystem
+  evidence: https://github.com/istio/istio.io/blob/a03df1cfd4fda35a88a37b7a6486141c1c153bea/data/companies.yml
+  channel: standard-directory
+  relationship: standard-participant
+  contract_reference:
+    register: Istio ecosystem (github.com/istio/istio.io data/companies.yml @a03df1cfd4)
+    spec_file: null
+    standard: Istio service mesh
+    role: istio-provider
+    registered_name: Northflank
+    registered_names:
+    - Northflank
+    website: https://northflank.com
+    matched_domain: northflank.com
+    matched_by: domain
+    identity_source: register-url
+    signal_note: 'participation only: the ecosystem lists are context, never read'
+    detected_by: sweep-api-management.py
+    detected: '2026-10-18'
+  detected_by: sweep-api-management.py
+  first_seen: '2026-10-18'
 source:
 - https://github.com/marketplace?type=actions
